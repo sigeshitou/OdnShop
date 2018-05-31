@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49C5DB38-E7A9-481D-BAFD-EE4BCA49C9AB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OdnShop.Web</RootNamespace>
+    <AssemblyName>OdnShop.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=1.0.2357.25625, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\外部DLL\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\外部DLL\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\外部DLL\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend\images\jquery.min.js" />
+    <Content Include="backend\images\jquery\jquery-1.11.2.min.js" />
+    <Content Include="backend\images\jquery\jquery.form.min.js" />
+    <Content Include="backend\images\jquery\jquery.jcrop.min.js" />
+    <Content Include="backend\images\jquery\jquery.jqzoom.js" />
+    <Content Include="backend\images\jquery\jquery.lazyload.min.js" />
+    <Content Include="backend\images\jquery\jquery.nicescroll.js" />
+    <Content Include="backend\images\jquery\jquery.pagination.js" />
+    <Content Include="backend\images\jquery\PCASClass.js" />
+    <Content Include="backend\images\jquery\Validform_v5.3.2_min.js" />
+    <Content Include="backend\images\layer.js" />
+    <Content Include="backend\images\logo.jpg" />
+    <Content Include="backend\images\uploader.js" />
+    <Content Include="backend\images\uploader.swf" />
+    <Content Include="backend\images\webuploader.min.js" />
+    <Content Include="backend\orderlist.aspx" />
+    <Content Include="backend\useredit.aspx" />
+    <Content Include="backend\userlist.aspx" />
+    <Content Include="backend\vshopconfig.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="vshop\cart.aspx" />
+    <Content Include="vshop\cart_ajax.aspx" />
+    <Content Include="vshop\images\avatar.jpg" />
+    <Content Include="vshop\images\b1.jpg" />
+    <Content Include="vshop\images\b2.jpg" />
+    <Content Include="vshop\images\b3.jpg" />
+    <Content Include="vshop\images\banner.jpg" />
+    <Content Include="vshop\images\cardadd.png" />
+    <Content Include="vshop\images\chlass1.png" />
+    <Content Include="vshop\images\chlass2.png" />
+    <Content Include="vshop\images\close.png" />
+    <Content Include="vshop\images\default.png" />
+    <Content Include="vshop\images\easing.js" />
+    <Content Include="vshop\images\fav.png" />
+    <Content Include="vshop\images\flexslider.css" />
+    <Content Include="vshop\images\font-awesome.css" />
+    <Content Include="vshop\images\font-awesome.min.css" />
+    <Content Include="vshop\images\fontawesome-webfont.svg" />
+    <Content Include="vshop\images\footericon1.png" />
+    <Content Include="vshop\images\footericon2.png" />
+    <Content Include="vshop\images\footericon3.png" />
+    <Content Include="vshop\images\footericon4.png" />
+    <Content Include="vshop\images\footericon5.png" />
+    <Content Include="vshop\images\footericons1.png" />
+    <Content Include="vshop\images\footericons2.png" />
+    <Content Include="vshop\images\footericons3.png" />
+    <Content Include="vshop\images\footericons4.png" />
+    <Content Include="vshop\images\footericons5.png" />
+    <Content Include="vshop\images\forshop.png" />
+    <Content Include="vshop\images\fortel.png" />
+    <Content Include="vshop\images\goback.png" />
+    <Content Include="vshop\images\gohome.png" />
+    <Content Include="vshop\images\gwc.png" />
+    <Content Include="vshop\images\icondel.png" />
+    <Content Include="vshop\images\iconsetupp.png" />
+    <Content Include="vshop\images\jquery-ui.min.js" />
+    <Content Include="vshop\images\jquery.flexslider-min.js" />
+    <Content Include="vshop\images\jquery.min.js" />
+    <Content Include="vshop\images\LArea.css" />
+    <Content Include="vshop\images\LArea.js" />
+    <Content Include="vshop\images\LArea.min.js" />
+    <Content Include="vshop\images\LAreaData1.js" />
+    <Content Include="vshop\images\LAreaData2.js" />
+    <Content Include="vshop\images\line.jpg" />
+    <Content Include="vshop\images\loading.gif" />
+    <Content Include="vshop\images\logo.jpg" />
+    <Content Include="vshop\images\ma.png" />
+    <Content Include="vshop\images\move-top.js" />
+    <Content Include="vshop\images\movetop.png" />
+    <Content Include="vshop\images\Navpic1.png" />
+    <Content Include="vshop\images\Navpic2.png" />
+    <Content Include="vshop\images\Navpic3.png" />
+    <Content Include="vshop\images\Navpic4.png" />
+    <Content Include="vshop\images\Navpic5.png" />
+    <Content Include="vshop\images\Navpic6.png" />
+    <Content Include="vshop\images\Navpic7.png" />
+    <Content Include="vshop\images\Navpic8.png" />
+    <Content Include="vshop\images\Navpic9.png" />
+    <Content Include="vshop\images\radio.png" />
+    <Content Include="vshop\images\sobg.png" />
+    <Content Include="vshop\images\style - 副本.css" />
+    <Content Include="vshop\images\style.css" />
+    <Content Include="vshop\images\switchable.js" />
+    <Content Include="vshop\images\sys_item_selected.gif" />
+    <Content Include="vshop\index.aspx" />
+    <Content Include="vshop\ordercheck.aspx" />
+    <Content Include="vshop\pay\wxpay.aspx" />
+    <Content Include="vshop\pay\wxpaynotify.aspx" />
+    <Content Include="vshop\productcategory.aspx" />
+    <Content Include="vshop\productlist.aspx" />
+    <Content Include="vshop\productshow.aspx" />
+    <Content Include="vshop\qrcode.aspx" />
+    <Content Include="vshop\search.aspx" />
+    <Content Include="vshop\user.aspx" />
+    <Content Include="vshop\userqrcode.aspx" />
+    <Content Include="vshop\user_fav.aspx" />
+    <Content Include="vshop\user_order.aspx" />
+    <Content Include="vshop\user_profile.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="backend\admincp.aspx.cs">
+      <DependentUpon>admincp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\admincp.aspx.designer.cs">
+      <DependentUpon>admincp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\adminlogin.aspx.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\adminlogin.aspx.designer.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\adminlogout.aspx.cs">
+      <DependentUpon>adminlogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\adminlogout.aspx.designer.cs">
+      <DependentUpon>adminlogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\leftindex.aspx.cs">
+      <DependentUpon>leftindex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\leftindex.aspx.designer.cs">
+      <DependentUpon>leftindex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\linkedit.aspx.cs">
+      <DependentUpon>linkedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\linkedit.aspx.designer.cs">
+      <DependentUpon>linkedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\linklist.aspx.cs">
+      <DependentUpon>linklist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\linklist.aspx.designer.cs">
+      <DependentUpon>linklist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\adminedit.aspx.cs">
+      <DependentUpon>adminedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\adminedit.aspx.designer.cs">
+      <DependentUpon>adminedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\adminlist.aspx.cs">
+      <DependentUpon>adminlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\adminlist.aspx.designer.cs">
+      <DependentUpon>adminlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\orderlist.aspx.cs">
+      <DependentUpon>orderlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\orderlist.aspx.designer.cs">
+      <DependentUpon>orderlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\productcategorylist.aspx.cs">
+      <DependentUpon>productcategorylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\productcategorylist.aspx.designer.cs">
+      <DependentUpon>productcategorylist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\productedit.aspx.cs">
+      <DependentUpon>productedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\productedit.aspx.designer.cs">
+      <DependentUpon>productedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\productlist.aspx.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\productlist.aspx.designer.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\top.aspx.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\top.aspx.designer.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\upload.aspx.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\upload.aspx.designer.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\useredit.aspx.cs">
+      <DependentUpon>useredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\useredit.aspx.designer.cs">
+      <DependentUpon>useredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\userlist.aspx.cs">
+      <DependentUpon>userlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\userlist.aspx.designer.cs">
+      <DependentUpon>userlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\vshopconfig.aspx.cs">
+      <DependentUpon>vshopconfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\vshopconfig.aspx.designer.cs">
+      <DependentUpon>vshopconfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\upload_ajax.ashx.cs">
+      <DependentUpon>upload_ajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vshop\business\DownloadBill.cs" />
+    <Compile Include="vshop\business\JsApiPay.cs" />
+    <Compile Include="vshop\business\MicroPay.cs" />
+    <Compile Include="vshop\business\NativeNotify.cs" />
+    <Compile Include="vshop\business\NativePay.cs" />
+    <Compile Include="vshop\business\OrderQuery.cs" />
+    <Compile Include="vshop\business\Refund.cs" />
+    <Compile Include="vshop\business\RefundQuery.cs" />
+    <Compile Include="vshop\business\ResultNotify.cs" />
+    <Compile Include="vshop\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\cart_ajax.aspx.cs">
+      <DependentUpon>cart_ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\cart_ajax.aspx.designer.cs">
+      <DependentUpon>cart_ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\lib\Config.cs" />
+    <Compile Include="vshop\lib\Data.cs" />
+    <Compile Include="vshop\lib\Exception.cs" />
+    <Compile Include="vshop\lib\HttpService.cs" />
+    <Compile Include="vshop\lib\Log.cs" />
+    <Compile Include="vshop\lib\Notify.cs" />
+    <Compile Include="vshop\lib\WxPayApi.cs" />
+    <Compile Include="vshop\ordercheck.aspx.cs">
+      <DependentUpon>ordercheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\ordercheck.aspx.designer.cs">
+      <DependentUpon>ordercheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\pay\wxpay.aspx.cs">
+      <DependentUpon>wxpay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\pay\wxpay.aspx.designer.cs">
+      <DependentUpon>wxpay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\pay\wxpaynotify.aspx.cs">
+      <DependentUpon>wxpaynotify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\pay\wxpaynotify.aspx.designer.cs">
+      <DependentUpon>wxpaynotify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\productcategory.aspx.cs">
+      <DependentUpon>productcategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\productcategory.aspx.designer.cs">
+      <DependentUpon>productcategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\productlist.aspx.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\productlist.aspx.designer.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\productshow.aspx.cs">
+      <DependentUpon>productshow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\productshow.aspx.designer.cs">
+      <DependentUpon>productshow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\qrcode.aspx.cs">
+      <DependentUpon>qrcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\qrcode.aspx.designer.cs">
+      <DependentUpon>qrcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\user.aspx.cs">
+      <DependentUpon>user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\user.aspx.designer.cs">
+      <DependentUpon>user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\userqrcode.aspx.cs">
+      <DependentUpon>userqrcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\userqrcode.aspx.designer.cs">
+      <DependentUpon>userqrcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\user_fav.aspx.cs">
+      <DependentUpon>user_fav.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\user_fav.aspx.designer.cs">
+      <DependentUpon>user_fav.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\user_order.aspx.cs">
+      <DependentUpon>user_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\user_order.aspx.designer.cs">
+      <DependentUpon>user_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vshop\user_profile.aspx.cs">
+      <DependentUpon>user_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vshop\user_profile.aspx.designer.cs">
+      <DependentUpon>user_profile.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend\admincp.aspx" />
+    <Content Include="backend\editor\kindeditor-min.js" />
+    <Content Include="backend\editor\kindeditor.js" />
+    <Content Include="backend\editor\lang\ar.js" />
+    <Content Include="backend\editor\lang\en.js" />
+    <Content Include="backend\editor\lang\zh_CN.js" />
+    <Content Include="backend\editor\lang\zh_TW.js" />
+    <Content Include="backend\editor\plugins\anchor\anchor.js" />
+    <Content Include="backend\editor\plugins\baidumap\baidumap.js" />
+    <Content Include="backend\editor\plugins\baidumap\map.html" />
+    <Content Include="backend\editor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="backend\editor\plugins\code\code.js" />
+    <Content Include="backend\editor\plugins\code\prettify.css" />
+    <Content Include="backend\editor\plugins\code\prettify.js" />
+    <Content Include="backend\editor\plugins\emoticons\emoticons.js" />
+    <Content Include="backend\editor\plugins\emoticons\images\0.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\1.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\10.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\100.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\101.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\102.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\103.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\104.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\105.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\106.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\107.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\108.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\109.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\11.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\110.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\111.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\112.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\113.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\114.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\115.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\116.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\117.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\118.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\119.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\12.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\120.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\121.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\122.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\123.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\124.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\125.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\126.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\127.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\128.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\129.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\13.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\130.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\131.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\132.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\133.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\134.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\14.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\15.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\16.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\17.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\18.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\19.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\2.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\20.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\21.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\22.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\23.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\24.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\25.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\26.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\27.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\28.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\29.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\3.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\30.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\31.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\32.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\33.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\34.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\35.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\36.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\37.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\38.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\39.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\4.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\40.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\41.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\42.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\43.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\44.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\45.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\46.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\47.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\48.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\49.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\5.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\50.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\51.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\52.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\53.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\54.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\55.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\56.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\57.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\58.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\59.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\6.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\60.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\61.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\62.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\63.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\64.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\65.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\66.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\67.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\68.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\69.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\7.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\70.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\71.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\72.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\73.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\74.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\75.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\76.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\77.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\78.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\79.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\8.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\80.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\81.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\82.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\83.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\84.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\85.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\86.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\87.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\88.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\89.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\9.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\90.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\91.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\92.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\93.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\94.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\95.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\96.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\97.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\98.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\99.gif" />
+    <Content Include="backend\editor\plugins\emoticons\images\static.gif" />
+    <Content Include="backend\editor\plugins\filemanager\filemanager.js" />
+    <Content Include="backend\editor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="backend\editor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="backend\editor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="backend\editor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="backend\editor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="backend\editor\plugins\flash\flash.js" />
+    <Content Include="backend\editor\plugins\image\image.js" />
+    <Content Include="backend\editor\plugins\image\images\align_left.gif" />
+    <Content Include="backend\editor\plugins\image\images\align_right.gif" />
+    <Content Include="backend\editor\plugins\image\images\align_top.gif" />
+    <Content Include="backend\editor\plugins\image\images\refresh.png" />
+    <Content Include="backend\editor\plugins\insertfile\insertfile.js" />
+    <Content Include="backend\editor\plugins\lineheight\lineheight.js" />
+    <Content Include="backend\editor\plugins\link\link.js" />
+    <Content Include="backend\editor\plugins\map\map.html" />
+    <Content Include="backend\editor\plugins\map\map.js" />
+    <Content Include="backend\editor\plugins\media\media.js" />
+    <Content Include="backend\editor\plugins\multiimage\images\image.png" />
+    <Content Include="backend\editor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="backend\editor\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="backend\editor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="backend\editor\plugins\multiimage\multiimage.js" />
+    <Content Include="backend\editor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="backend\editor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="backend\editor\plugins\preview\preview.js" />
+    <Content Include="backend\editor\plugins\quickformat\quickformat.js" />
+    <Content Include="backend\editor\plugins\table\table.js" />
+    <Content Include="backend\editor\plugins\template\html\1.html" />
+    <Content Include="backend\editor\plugins\template\html\2.html" />
+    <Content Include="backend\editor\plugins\template\html\3.html" />
+    <Content Include="backend\editor\plugins\template\template.js" />
+    <Content Include="backend\editor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="backend\editor\themes\common\anchor.gif" />
+    <Content Include="backend\editor\themes\common\blank.gif" />
+    <Content Include="backend\editor\themes\common\flash.gif" />
+    <Content Include="backend\editor\themes\common\loading.gif" />
+    <Content Include="backend\editor\themes\common\media.gif" />
+    <Content Include="backend\editor\themes\common\rm.gif" />
+    <Content Include="backend\editor\themes\default\background.png" />
+    <Content Include="backend\editor\themes\default\default.css" />
+    <Content Include="backend\editor\themes\default\default.png" />
+    <Content Include="backend\editor\themes\qq\editor.gif" />
+    <Content Include="backend\editor\themes\qq\qq.css" />
+    <Content Include="backend\editor\themes\simple\simple.css" />
+    <Content Include="backend\main.aspx" />
+    <Content Include="backend\adminedit.aspx" />
+    <Content Include="backend\adminlist.aspx" />
+    <Content Include="config\siteconfig.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OdnShop.Core\OdnShop.Core.csproj">
+      <Project>{EEFD56C7-D6C8-4696-A02C-325D9561E13C}</Project>
+      <Name>OdnShop.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend\adminlogin.aspx" />
+    <Content Include="backend\adminlogout.aspx" />
+    <Content Include="backend\editor\file_manager_json.ashx" />
+    <Content Include="backend\editor\upload_json.ashx" />
+    <Content Include="backend\images\login.css" />
+    <Content Include="backend\images\style.css" />
+    <Content Include="backend\leftindex.aspx" />
+    <Content Include="backend\linkedit.aspx" />
+    <Content Include="backend\linklist.aspx" />
+    <Content Include="backend\productcategorylist.aspx" />
+    <Content Include="backend\productedit.aspx" />
+    <Content Include="backend\productlist.aspx" />
+    <Content Include="backend\top.aspx" />
+    <Content Include="backend\upload.aspx" />
+    <Content Include="config\tenpayconfig.config" />
+    <Content Include="tools\upload_ajax.ashx" />
+    <Content Include="vshop\images\AreaData.json" />
+    <Content Include="vshop\images\fontawesome-webfont.eot" />
+    <Content Include="vshop\images\fontawesome-webfont.ttf" />
+    <Content Include="vshop\images\fontawesome-webfont.woff" />
+    <Content Include="vshop\images\fontawesome-webfont.woff2" />
+    <Content Include="vshop\images\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="data\pic\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1861</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

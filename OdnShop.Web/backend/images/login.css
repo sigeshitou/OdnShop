@@ -1,0 +1,13 @@
+body { background:#f5f5f5; color:#333; font-size:14px; font-family:Microsoft YaHei,SimSun, Tahoma, Verdana,Arial,Helvetica,sans-serif; line-height:180%; margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6,ul,ol,form,dl,dd,dt,p { margin:0; padding:0; }
+a { color:#333; text-decoration:none; text-decoration:none }
+a:hover { color:#f30; text-decoration: underline }
+.textbox { vertical-align:middle; border-bottom:1px #ccc solid; border-left:0; border-right:0; border-top:0; }
+.textbox:hover { border-bottom:1px #999 solid; border-left:0; border-right:0; border-top:0; }
+#login { width:380px; margin:100px auto 0 auto; border:1px #407fb5 solid; background:#fff }
+#login p { display:block; padding:10px 0 15px 0; text-align:center}
+form { padding:8px 8px 5px 12px }
+#tit { background:#407fb5; height:38px; line-height:38px; color:#fff; font-size:14px; font-weight:bold; text-align:center; overflow:hidden }
+#tit h1 { font-size:18px; font-weight:bold; }
+.gogo { background:#407fb5; color:#fff; border:0; font-size:14px; padding:3px 6px; }
+#footer { text-align:center; padding:30px 0; }

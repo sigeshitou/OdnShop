@@ -1,0 +1,9 @@
+OdnShop V1.2
+
+官方网站：http://www.odnshop.com
+
+后台地址：backend/admincp.aspx
+帐号密码：
+admin
+admin888
+
