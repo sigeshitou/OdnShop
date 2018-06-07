@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdnShop.Core", "OdnShop.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdnShop.Web", "OdnShop.Web\OdnShop.Web.csproj", "{49C5DB38-E7A9-481D-BAFD-EE4BCA49C9AB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{DDB25B39-FD47-416A-B52C-2EF8D05AE824}"
+	ProjectSection(SolutionItems) = preProject
+		sql\odnshop.sql = sql\odnshop.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
