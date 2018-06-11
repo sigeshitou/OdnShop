@@ -24,3 +24,6 @@
 后台地址为http://你的域名/backend/admincp.aspx 账号：admin 密码:admin888
 微商城地址为http://你的域名/vshop/index.aspx
 
+#### 界面展示
+![输入图片说明](https://gitee.com/uploads/images/2018/0611/102010_39acbb3a_1261781.png "1.png")
+![输入图片说明](https://gitee.com/uploads/images/2018/0611/102031_545515c3_1261781.png "2.png")
