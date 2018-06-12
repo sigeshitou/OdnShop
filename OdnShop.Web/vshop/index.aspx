@@ -39,10 +39,10 @@
 <!-- 首页四个图标 s -->
 <main class="main">
 <div class="webiconbox">
-<a href="giftlist.aspx">
+<a href="user_order.aspx">
 <dl>
 <dt><img src="images/Navpic6.png" alt=""/></dt>
-<dd>积分礼物</dd>
+<dd>我的订单</dd>
 </dl>
 </a>
 <a href="user_fav.aspx">
