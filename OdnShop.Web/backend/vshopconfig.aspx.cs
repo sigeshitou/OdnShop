@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 using OdnShop.Core.Common;
-using OdnShop.Core.Factory;
+using OdnShop.Core.Business;
 using OdnShop.Core.Model;
 namespace OdnShop.Web.backend
 {
@@ -14,7 +10,7 @@ namespace OdnShop.Web.backend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            OdnShop.Core.Business.Security.CheckAdministerAndRedirect();
+            Security.CheckAdministerAndRedirect();
             if (!Page.IsPostBack)
             {
                 VShopConfig vs = VShopConfigHelper.Get();

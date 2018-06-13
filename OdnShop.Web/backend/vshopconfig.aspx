@@ -17,7 +17,7 @@ body { padding:10px }
 <table height="0" border="0" cellpadding="0" cellspacing="1" class="tabBgColor">
 <tr align="left">
   <td height="25">
-    管理导航：<a href="vshopconfig.aspx">基本信息设置</a> | <a href="linklist.aspx?pb=首页幻灯片">首页幻灯片</a> | <a href="singlepageedit.aspx?action=edit&pageid=2">关于我们</a>
+    管理导航：<a href="vshopconfig.aspx">基本信息设置</a> | <a href="linklist.aspx?pb=首页幻灯片">首页幻灯片</a>
   </td>
 </tr>
 </table>
