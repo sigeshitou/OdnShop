@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 using OdnShop.Core.Common;
 using OdnShop.Core.Factory;
 using OdnShop.Core.Model;
+using OdnShop.Core.Business;
 namespace OdnShop.Web.backend
 {
     public partial class useredit : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            OdnShop.Core.Business.Security.CheckAdministerAndRedirect();
+            Security.CheckAdministerAndRedirect();
             if (!Page.IsPostBack)
             {
                 if (this.Action == "edit")

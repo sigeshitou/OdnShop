@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
 
-using OdnShop.Core.Common;
+using OdnShop.Core.Business;
 using OdnShop.Core.Factory;
 using OdnShop.Core.Model;
 namespace OdnShop.Web.backend
@@ -18,7 +11,7 @@ namespace OdnShop.Web.backend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            OdnShop.Core.Business.Security.CheckAdministerAndRedirect();
+            Security.CheckAdministerAndRedirect();
             if (!Page.IsPostBack)
             {
                 this.LoadListData();

@@ -1,25 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
 using System.IO;
 
 using OdnShop.Core.Common;
-using OdnShop.Core.Factory;
-using OdnShop.Core.Model;
+using OdnShop.Core.Business;
 namespace OdnShop.Web.backend
 {
     public partial class upload : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            OdnShop.Core.Business.Security.CheckAdministerAndRedirect();
+            Security.CheckAdministerAndRedirect();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -43,8 +33,6 @@ namespace OdnShop.Web.backend
                 string savePath = Path.Combine(rootPath, filename);
 
                 this.FileUpload1.SaveAs(savePath);
-
-                //Thumbnail.MakeThumbnailImage(
 
                 //需返回到父页面的路径
                 string returnPath = string.Format("/{0}/{1}{2}/{3}", "attachments", year, month, filename); //string.Format("{0}{1}/{2}", year, month, filename);

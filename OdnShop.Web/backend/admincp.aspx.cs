@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Configuration;
-using System.Data;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-
 using OdnShop.Core.Business;
 namespace OdnShop.Web.backend
 {
@@ -16,13 +8,12 @@ namespace OdnShop.Web.backend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            OdnShop.Core.Business.Security.CheckAdministerAndRedirect();
+            Security.CheckAdministerAndRedirect();
 
-            LoginMember m = OdnShop.Core.Business.Security.Check();
+            LoginMember m = Security.Check();
             if (m != null)
             {
                 this.LoginAdminid = m.adminid;
-                //this.ltlUsername.Text = m.username ;
             }
         }
 

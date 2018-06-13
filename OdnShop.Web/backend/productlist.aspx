@@ -109,7 +109,6 @@ function CheckDeleteHandle(btn)
              </ItemTemplate>
         </asp:TemplateColumn>
      </Columns>
-
 <HeaderStyle CssClass="title_bg"></HeaderStyle>
   </asp:DataGrid> 
     <table border="0" align="center" cellpadding="3" cellspacing="1" class="table_b">

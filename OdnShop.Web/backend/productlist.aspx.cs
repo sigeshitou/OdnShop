@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
 using System.Collections.Generic;
 
 using OdnShop.Core.Common;
 using OdnShop.Core.Factory;
-using OdnShop.Core.Model;
 namespace OdnShop.Web.backend
 {
     public partial class productlist : System.Web.UI.Page
@@ -22,7 +14,7 @@ namespace OdnShop.Web.backend
             OdnShop.Core.Business.Security.CheckAdministerAndRedirect();
             if (!Page.IsPostBack)
             {
-                this.ddlSearchCategorys.DataSource = ProductCategoryFactory.GetAll(); //VideoCategoryFactory.GetAll(HYRequest.GetInt("channelid", 0));
+                this.ddlSearchCategorys.DataSource = ProductCategoryFactory.GetAll(); 
                 this.ddlSearchCategorys.DataBind();
 
                 this.ddlSearchCategorys.Items.Insert(0, new ListItem("所有栏目", "0"));
