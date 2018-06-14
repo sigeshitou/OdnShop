@@ -65,9 +65,7 @@
         }%>
 </ul>
 <div class="showpagesg" style="display:none"><a href="">&lt;&lt;</a> <span>1</span> <a href="">2</a>  <a href="">3</a> <a href="">&gt;</a> <a href="">&gt;&gt;</a></div>
-
 </main>
-
 
 <!-- 底部菜单s -->
 <footer class="footer">

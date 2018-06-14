@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="productcategory.aspx.cs" Inherits="OdnShop.Web.vshop.productcategory" %>
+<%@ Import Namespace="System.Collections.Generic" %>
 <%@ Import Namespace="OdnShop.Core.Factory" %>
 <%@ Import Namespace="OdnShop.Core.Model" %>
 <!doctype html>
@@ -20,10 +21,10 @@
 <ul>
 <li class="active">全部分类</li>
     <%
-        System.Data.DataTable dtCate = ProductCategoryFactory.GetAll();
-        foreach (System.Data.DataRow dr in dtCate.Rows)
+        List<ProductCategoryModel> pcates = ProductCategoryFactory.GetListAll();
+        foreach (ProductCategoryModel cat in pcates)
         {
-            Response.Write(string.Format("<li>{0}</li>",dr["categoryname"].ToString()));
+            Response.Write(string.Format("<li>{0}</li>",cat.categoryname));
         }
         %>
 </ul>
@@ -46,20 +47,20 @@
 <div class="mores"><a href="productlist.aspx">查看本分类全部商品</a></div>
 </li>
     <%
-        foreach (System.Data.DataRow dr in dtCate.Rows)
+        foreach (ProductCategoryModel cat in pcates)
         {
 
         %>
-<li><!-- 山茶油分类下10个商品dl -->
+<li><!-- 分类下10个商品dl -->
 <%
-        allP = ProductFactory.GetList(10, string.Format(" where productcode=1 and categoryid={0} ",dr["categoryid"].ToString()));
+        allP = ProductFactory.GetList(10, string.Format(" where productcode=1 and categoryid={0} ",cat.categoryid));
         AddProductToList(pageAllProducts, allP);
         foreach (ProductModel pm in allP)
         {
         %>
 <dl><dt><a href="productshow.aspx?id=<%= pm.productid %>"><img src="<%= pm.includepicpath %>" alt="" /></a></dt><dd><h3><%= pm.productname %></h3><span>&yen;<%= pm.price %></span><del style="display:none">&yen;500</del><p class="add-to-cart" onClick="toshare(<%= pm.productid %>)"><span>添加到购物车</span></p></dd></dl>
 <% } %>
-<div class="mores"><a href="productlist.aspx?cid=<%=dr["categoryid"].ToString() %>">查看本分类全部商品</a></div>
+<div class="mores"><a href="productlist.aspx?cid=<%= cat.categoryid %>">查看本分类全部商品</a></div>
 </li>
     <% }%>
 </div>

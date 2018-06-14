@@ -42,7 +42,7 @@ namespace OdnShop.Core.Factory
 
         public static void Update(UserModel info)
         {
-            string sql = @"update cms_user set 
+            string sql = @"update odnshop_user set 
                             nickname = ?nickname,
                             openid = ?openid,
                             fullname = ?fullname,

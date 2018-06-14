@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using MySql.Data.MySqlClient;
-
+using System.Collections.Generic;
 using OdnShop.Core.Model;
 namespace OdnShop.Core.Factory
 {
@@ -62,6 +62,26 @@ namespace OdnShop.Core.Factory
             }
 
             return info;
+        }
+
+        public static List<ProductCategoryModel> GetListAll()
+        {
+            DataTable dt = GetAll();
+
+            List<ProductCategoryModel> list = new List<ProductCategoryModel>();
+            ProductCategoryModel info = null;
+            foreach (DataRow dr in dt.Rows)
+            {
+                info = new ProductCategoryModel();
+                info.categoryid = Int32.Parse(dr["categoryid"].ToString());
+                info.categoryname = dr["categoryname"].ToString();
+                info.orderid = Int32.Parse(dr["orderid"].ToString());
+                info.parentid = Int32.Parse(dr["parentid"].ToString());
+
+                list.Add(info);
+            }
+
+            return list;
         }
 
         public static DataTable GetAll()

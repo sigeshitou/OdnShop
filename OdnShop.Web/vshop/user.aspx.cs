@@ -11,16 +11,23 @@ namespace OdnShop.Web.vshop
             if (!Page.IsPostBack)
             {
                 UserModel userInfo = this.LoginUser;
-                this.ltlNickname.Text = userInfo.nickname;
-                this.ltlUsertypedesc.Text = userInfo.usertypedesc;
-                this.ltlUid.Text = userInfo.uid.ToString();
-                this.ltljf.Text = userInfo.jfnum.ToString();
+                nickname = userInfo.nickname;
+                usertypedesc = userInfo.usertypedesc;
+                userId = userInfo.uid.ToString();
+                userJf = userInfo.jfnum.ToString();
 
                 if (userInfo.headpicurl != string.Empty)
                 {
-                    this.ltlheaderpic.Text = string.Format("<img src='{0}' />", userInfo.headpicurl);
+                    headerpic = string.Format("<img src='{0}' />", userInfo.headpicurl);
                 }
             }
         }
+
+        public string nickname { get; set; }
+        public string usertypedesc { get; set; }
+        public string userId { get; set; }
+        public string userJf { get; set; }
+        public string headerpic { get; set; }
+
     }
 }

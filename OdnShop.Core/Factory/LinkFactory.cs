@@ -44,7 +44,7 @@ namespace OdnShop.Core.Factory
         public static void Update(LinkModel model)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("update cms_link set ");
+            strSql.Append("update odnshop_link set ");
             strSql.Append("linkname=?linkname,");
             strSql.Append("linkurl=?linkurl,");
             strSql.Append("includepic=?includepic,");

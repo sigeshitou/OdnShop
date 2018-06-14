@@ -57,7 +57,7 @@ namespace OdnShop.Core.Factory
 
         public static void Update(ProductModel info)
         {
-            string sql = @"UPDATE cms_product set 
+            string sql = @"UPDATE odnshop_product set 
                             productname=?productname ,
                             includepicpath=?includepicpath ,
                             productpics=?productpics,
@@ -131,7 +131,7 @@ namespace OdnShop.Core.Factory
             string sql = string.Format("select * from odnshop_product {0}{1} limit {2},{3}", whereSql, orderBy, start, pageSize);
 
             DataTable dt = MySqlDbHelper.Query(sql).Tables[0];
-            totalcount = MySqlDbHelper.ExecuteScalar(string.Format("select count(*) from cms_product {0}", whereSql));
+            totalcount = MySqlDbHelper.ExecuteScalar(string.Format("select count(*) from odnshop_product {0}", whereSql));
 
 
             List<ProductModel> list = new List<ProductModel>();

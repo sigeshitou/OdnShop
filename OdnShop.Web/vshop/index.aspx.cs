@@ -8,33 +8,27 @@ namespace OdnShop.Web.vshop
 {
     public partial class index : OdnShop.Core.PageControler.WebPageBase 
     {
+        public List<ProductModel> commendProducts = new List<ProductModel>();
+        public List<ProductModel> latestProducts = new List<ProductModel>();
+        public List<ProductModel> addCarPopWinProducts = new List<ProductModel>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                List<ProductModel> cps = ProductFactory.GetList(6, " where iscommend=1 and productcode=1 ");
-                this.rptCommendProducts.DataSource = cps;
-                this.rptCommendProducts.DataBind();
+                commendProducts = ProductFactory.GetList(6, " where iscommend=1 and productcode=1 ");
+                latestProducts = ProductFactory.GetList(12, " where productcode=1 ");
 
-                List<ProductModel> lps = ProductFactory.GetList(12, " where productcode=1 ");
-                this.rptLatestProducts.DataSource = lps;
-                this.rptLatestProducts.DataBind();
-
-                List<ProductModel> addps = new List<ProductModel>();
-                foreach (ProductModel pm in cps)
+                foreach (ProductModel pm in commendProducts)
                 {
-                    addps.Add(pm);
+                    addCarPopWinProducts.Add(pm);
                 }
 
-                foreach (ProductModel pm in lps)
+                foreach (ProductModel pm in latestProducts)
                 {
-                    if (addps.Contains(pm)) continue;
+                    if (addCarPopWinProducts.Contains(pm)) continue;
 
-                    addps.Add(pm);
+                    addCarPopWinProducts.Add(pm);
                 }
-
-                this.rptAddToCarPopWin.DataSource = addps;
-                this.rptAddToCarPopWin.DataBind();
             }
         }
     }

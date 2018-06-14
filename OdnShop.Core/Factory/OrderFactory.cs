@@ -190,7 +190,7 @@ namespace OdnShop.Core.Factory
             string sql = string.Format("select * from odnshop_order {0}{1} limit {2},{3}", whereSql, orderBy, start, pageSize);
 
             DataTable dt = MySqlDbHelper.Query(sql).Tables[0];
-            totalcount = MySqlDbHelper.ExecuteScalar(string.Format("select count(*) from cms_order {0}", whereSql));
+            totalcount = MySqlDbHelper.ExecuteScalar(string.Format("select count(*) from odnshop_order {0}", whereSql));
 
             return dt;
 
@@ -242,7 +242,7 @@ namespace OdnShop.Core.Factory
             string sql = string.Format("select * from odnshop_order {0}{1} limit {2},{3}", whereSql, orderBy, start, pageSize);
 
             DataTable dt = MySqlDbHelper.Query(sql).Tables[0];
-            totalcount = MySqlDbHelper.ExecuteScalar(string.Format("select count(*) from cms_order {0}", whereSql));
+            totalcount = MySqlDbHelper.ExecuteScalar(string.Format("select count(*) from odnshop_order {0}", whereSql));
 
             List<OrderModel> list = new List<OrderModel>();
             OrderModel info = null;

@@ -1,4 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="productlist.aspx.cs" Inherits="OdnShop.Web.vshop.productlist" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="OdnShop.Core.Model" %>
 <!doctype html>
 <html>
 <head>
@@ -63,22 +65,21 @@ if ($("#chicon").attr("class")=="chlass1")
 <!-- 产品列表先显示12个，更多的下拉加载分页s -->
 <div class="prolist" id="gallery-wrapper">
 <ul>
-  <asp:Repeater runat="server" ID="rptProducts">
-      <ItemTemplate>
+<% foreach (ProductModel pm in listProducts)
+    { %>
 <li class="item">
-<a href="productshow.aspx?id=<%# Eval("productid")%>"><img src="<%# Eval("includepicpath")%>" alt="item" /></a>
-<h4><a href="productshow.aspx?id=<%# Eval("productid")%>"><%# Eval("productname")%></a></h4>
-<span>&yen;<%# Eval("price")%></span><del style="display:none">&yen;500</del>
-<em>库存：<%# Eval("productcount")%> &nbsp; 销量：<%# Eval("salecount")%></em>
-<p class="add-to-cart" onClick="toshare(<%# Eval("productid")%>)"><span>添加到购物车</span></p>
+<a href="productshow.aspx?id=<%=pm.productid%>"><img src="<%=pm.includepicpath%>" alt="item" /></a>
+<h4><a href="productshow.aspx?id=<%=pm.productid%>"><%=pm.productname%></a></h4>
+<span>&yen;<%=pm.price%></span>
+<em>库存：<%=pm.productcount%> &nbsp; 销量：<%=pm.salecount%></em>
+<p class="add-to-cart" onClick="toshare(<%=pm.productid%>)"><span>添加到购物车</span></p>
 </li>
-    </ItemTemplate>
-     </asp:Repeater>
+<% } %>
 </ul>
 <!-- 没有分页点击，改为下拉加载，详细查看最后js -->
 <!-- 分页开始，说明：不能点击用span，能点击用a -->
 <div class="showpage">
-<asp:Literal runat="server" ID="ltlPager" />
+<%= pagerHtml %>
 </div>
 <!-- 分页end -->
 </div>
@@ -105,23 +106,23 @@ if ($("#chicon").attr("class")=="chlass1")
         })
     }	
 </script>
-<asp:Repeater runat="server" ID="rptAddToCarPopWin">
-      <ItemTemplate>
-<div class="am-share" id="showproduct<%# Eval("productid")%>">
+<% foreach (ProductModel pm in listProducts)
+    { %>
+<div class="am-share" id="showproduct<%=pm.productid%>">
 <dl>
-<dt><img src="<%# Eval("includepicpath")%>" alt=""/></dt>
+<dt><img src="<%=pm.includepicpath%>" alt=""/></dt>
 <dd>
-<h4><%# Eval("productname")%></h4>
-<span id="showprice<%# Eval("productid")%>">&yen;<%# Eval("price")%></span><del style="display:none">&yen;500</del> 
-<p>库存：<%# Eval("productcount")%></p>
+<h4><%=pm.productname%></h4>
+<span id="showprice<%=pm.productid%>">&yen;<%=pm.price%></span>
+<p>库存：<%=pm.productcount%></p>
 <!--规格属性-->
-    <div class="iteminfo_buying" style="<%# Eval("itemprice").ToString() == "" ? "display:none" : "" %>">
+    <div class="iteminfo_buying" style="<%= (pm.itemprice == "" ? "display:none" : "") %>">
         <div class="sys_item_spec">
-            <dl class="iteminfo_parameter sys_item_specpara" data-sid="<%# Eval("productid")%>">
-                <dt>属性<input type="hidden" id="itemvalue<%# Eval("productid")%>" /></dt>
+            <dl class="iteminfo_parameter sys_item_specpara" data-sid="<%=pm.productid%>">
+                <dt>属性<input type="hidden" id="itemvalue<%=pm.productid%>" /></dt>
                 <dd>
                     <ul class="sys_spec_img">
-                    <%# getitems(Eval("itemprice").ToString(),"showprice"+Eval("productid")) %>
+                    <%= getitems(pm.itemprice,"showprice"+pm.productid) %>
                     </ul>
                 </dd>
             </dl>
@@ -132,18 +133,17 @@ if ($("#chicon").attr("class")=="chlass1")
 </dl>
 
 <div class="changegoodsnumber">
-<h4>数量：</h4><p><span onClick="change_goods_number('1',<%# Eval("productid")%>)" >-</span><input type="hidden" id="back_number<%# Eval("productid")%>" value="1" /><input type="text" class="formnum"  name="<%# Eval("productid")%>" id="goods_number<%# Eval("productid")%>" autocomplete="off" value="1" onFocus="back_goods_number(<%# Eval("productid")%>)"  onblur="change_goods_number('2',<%# Eval("productid")%>)" /><span onClick="change_goods_number('3',<%# Eval("productid")%>)">+</span></p>
+<h4>数量：</h4><p><span onClick="change_goods_number('1',<%=pm.productid%>)" >-</span><input type="hidden" id="back_number<%=pm.productid%>" value="1" /><input type="text" class="formnum"  name="<%=pm.productid%>" id="goods_number<%=pm.productid%>" autocomplete="off" value="1" onFocus="back_goods_number(<%=pm.productid%>)"  onblur="change_goods_number('2',<%=pm.productid%>)" /><span onClick="change_goods_number('3',<%=pm.productid%>)">+</span></p>
 </div>
 
 <ul class="gocartli">
-<li><a href="javascript:void(0)" onclick="addtocart(<%# Eval("productid")%>);">加入购物车</a></li>
-<li><a href="cart.aspx?action=add&pid=<%# Eval("productid")%>" id="gotobuy<%# Eval("productid")%>">立即购买</a></li>
+<li><a href="javascript:void(0)" onclick="addtocart(<%=pm.productid%>);">加入购物车</a></li>
+<li><a href="cart.aspx?action=add&pid=<%=pm.productid%>" id="gotobuy<%=pm.productid%>">立即购买</a></li>
 </ul>
 
 <button class="share_btn"><span>取消</span></button>
 </div>
-</ItemTemplate>
-   </asp:Repeater>
+<% } %>
 <script>
     function back_goods_number(id) {
         var goods_number = document.getElementById('goods_number' + id).value;

@@ -40,15 +40,15 @@ namespace OdnShop.Web.vshop
                     orderby = " order by price desc ";
                 }
 
-                List<ProductModel> list = ProductFactory.GetList(pagesize, pageindex, whereSql, orderby, out totalcount);
+                listProducts = ProductFactory.GetList(pagesize, pageindex, whereSql, orderby, out totalcount);
 
-                this.rptProducts.DataSource = list;
-                this.rptProducts.DataBind();
+                //this.rptProducts.DataSource = list;
+                //this.rptProducts.DataBind();
 
-                this.rptAddToCarPopWin.DataSource = list; //ProductFactory.GetList(80, 1, whereSql, orderby, out totalcount); ;
-                this.rptAddToCarPopWin.DataBind();
+                //this.rptAddToCarPopWin.DataSource = list; 
+                //this.rptAddToCarPopWin.DataBind();
 
-                this.ltlPager.Text = Utils.BuildProductListPager(totalcount, pagesize, pageindex, url);
+                pagerHtml = Utils.BuildProductListPager(totalcount, pagesize, pageindex, url);
 
                 if (cid == 0)
                     this.CategoryName = "全部商品";
@@ -87,9 +87,11 @@ namespace OdnShop.Web.vshop
                 Response.Write(sbhtml.ToString());
                 Response.Flush();
                 Response.End();
-
             }
         }
+
+        public List<ProductModel> listProducts { get; set; }
+        public string pagerHtml { get; set; }
 
         public int CagetoryId
         {

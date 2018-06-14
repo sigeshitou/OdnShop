@@ -24,11 +24,11 @@
 </header>
 
 <div class="userinfo">
-<div class="userimg"><asp:Literal runat="server" ID="ltlheaderpic" /></div>
+<div class="userimg"><%= headerpic %></div>
 <dl>
-<dt><h4><asp:Literal runat="server" ID="ltlNickname" /></h4></dt>
+<dt><h4><%= nickname %></h4></dt>
 <dd>您好，欢迎登陆<%=shopconfig.ShopName %></dd>
-<dd>您是 <span><asp:Literal runat="server" ID="ltlUsertypedesc" /></span> 您的ID号：<asp:Literal runat="server" ID="ltlUid" /></dd>
+<dd>您是 <span><%= usertypedesc %></span> 您的ID号：<%= userId %></dd>
 </dl>
 </div>
 
@@ -46,7 +46,7 @@
 
 <a href="javascript:void(0)">
 <dl>
-<dt><i class="fa fa-diamond"></i> 我的积分 <span><asp:Literal runat="server" ID="ltljf" /></span></dt>
+<dt><i class="fa fa-diamond"></i> 我的积分 <span><%= userJf %></span></dt>
 <dd><i class="fa fa-angle-right"></i></dd>
 </dl>
 </a>

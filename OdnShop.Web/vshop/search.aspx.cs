@@ -24,20 +24,16 @@ namespace OdnShop.Web.vshop
                 if (!string.IsNullOrEmpty(kw))
                 {
                     whereSql = string.Format(" where productname like '%{0}%' ", kw);
-                    list = ProductFactory.GetList(pagesize, pageindex, whereSql, " order by productid desc ", out totalcount);
+                    searchProducts = ProductFactory.GetList(pagesize, pageindex, whereSql, " order by productid desc ", out totalcount);
                 }
                 else
                 {
-                    list = ProductFactory.GetList(10, string.Empty);
+                    searchProducts = ProductFactory.GetList(10, string.Empty);
                 }
-
-                this.rptProducts.DataSource = list;
-                this.rptProducts.DataBind();
-
-                this.rptAddToCarPopWin.DataSource = list;
-                this.rptAddToCarPopWin.DataBind();
             }
         }
+
+        public List<ProductModel> searchProducts { get; set; }
 
         private string _searchkw = string.Empty;
         public string SearchKw

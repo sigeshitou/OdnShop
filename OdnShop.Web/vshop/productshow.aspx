@@ -69,19 +69,6 @@ $(function() {
 </a>
 </section>
 
-<section style="display:none">
-<a href="">
-<p><span>配送至：</span>广东河源东源县</p>
-<i class="fa fa-angle-right fa-2x"></i>
-</a>
-</section>
-
-<section style="display:none">
-<a  onClick="toshare()">
-<p class=""><span>已选：</span>数量：3 码数：M</p>
-<i class="fa fa-angle-right fa-2x"></i>
-</a>
-</section>
 
 <section>
 <h4 class="">商品描述</h4>
@@ -122,7 +109,7 @@ $(function() {
 <dt><img src="<%= productinfo.includepicpath %>" alt=""/></dt>
 <dd>
 <h4><%= productinfo.productname %></h4>
-<span id="showprice<%=productinfo.productid%>">&yen;<%= productinfo.price %></span><del style="display:none">&yen;500</del>
+<span id="showprice<%=productinfo.productid%>">&yen;<%= productinfo.price %></span>
 <p>库存：<%= productinfo.productcount %></p>
 <!--规格属性-->
     <div class="iteminfo_buying" style="<%=productinfo.itemprice == "" ? "display:none" : "" %>">

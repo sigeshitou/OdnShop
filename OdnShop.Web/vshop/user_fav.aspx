@@ -41,7 +41,7 @@
 </dt>
 <dd>
 <h4><a href="productshow.aspx?id=<%= fm.productid %>"><%= fm.product.productname %></a></h4>
-<span>&yen;<%= fm.product.price %></span><del style="display:none">&yen;500</del>
+<span>&yen;<%= fm.product.price %></span>
 <article>
 <a href="javascript:void(0)" onClick="delfav(<%= fm.fid %>)"><span>删除</span></a>
 </article>
