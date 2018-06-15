@@ -5,7 +5,7 @@ OdnShop 安装指南V1.0
 
 【安装流程】
 1，把安装包上传到主机空间；
-2，在MYSQL里新建一个数据库qzbshop(也可以是其他数据库名)，执行安装包sql目录qzb.sql文件。
+2，在MYSQL里新建一个数据库odnshop(也可以是其他数据库名)，执行安装包sql目录odnshop.sql文件。
 3，用文本编辑器打开config目录下siteconfig.config文件，按提示填写正确的网站域名，链接字符串，AppId等参数；
   为了方便在没有接入公众号的情况下体验程序，我们设置了一个演示模式参数VShopShowMode，请按配置文件里的备注设置；
 4，用文本编辑器打开config目录下tenpayconfig.config文件，按备注提示设置微信支付需要的参数
