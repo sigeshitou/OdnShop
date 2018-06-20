@@ -91,5 +91,33 @@ namespace OdnShop.Core.Factory
 
             return dt;
         }
+
+        public static DataTable GetAll(int parentid)
+        {
+            string sql = "select * from odnshop_productcategory where parentid=" + parentid + " order by orderid asc";
+            DataTable dt = MySqlDbHelper.Query(sql).Tables[0];
+
+            return dt;
+        }
+
+        public static List<ProductCategoryModel> GetListAll(int parentid)
+        {
+            DataTable dt = GetAll(parentid);
+
+            List<ProductCategoryModel> list = new List<ProductCategoryModel>();
+            ProductCategoryModel info = null;
+            foreach (DataRow dr in dt.Rows)
+            {
+                info = new ProductCategoryModel();
+                info.categoryid = Int32.Parse(dr["categoryid"].ToString());
+                info.categoryname = dr["categoryname"].ToString();
+                info.orderid = Int32.Parse(dr["orderid"].ToString());
+                info.parentid = Int32.Parse(dr["parentid"].ToString());
+
+                list.Add(info);
+            }
+
+            return list;
+        }
     }
 }
