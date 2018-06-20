@@ -16,7 +16,7 @@ body { padding:10px }
 <h3 class="boxtitle">后台管理 &gt;&gt; 产品分类管理</h3>
 <table height="0" border="0" cellpadding="0" cellspacing="1" class="tabBgColor">
 <tr align="center">
-  <td height="25" background="Images/Top.gif"></td>
+  <td height="25" background="Images/Top.gif"><a href="productcategoryedit.aspx?action=add">添加分类</a></td>
 </tr>
 </table>
   <asp:DataGrid runat="server" ID="dgProductCategoryList" AutoGenerateColumns="false" 
@@ -58,9 +58,9 @@ body { padding:10px }
               <asp:TextBox CssClass="input" runat="server" ID="txtaddorderid" Text="0" />
            </FooterTemplate>
         </asp:TemplateColumn>
-        <asp:EditCommandColumn CancelText="取消" EditText="编辑" UpdateText="保存" HeaderText="编辑" ItemStyle-HorizontalAlign="Center"  />
         <asp:TemplateColumn HeaderText="操作" ItemStyle-HorizontalAlign="Center">
              <ItemTemplate>
+                <a href='productcategoryedit.aspx?action=edit&categoryid=<%# DataBinder.Eval(Container.DataItem, "categoryid")%>'>编辑</a> | 
                 <asp:LinkButton runat="server" ID="lnkDelete" CommandArgument="DeleteInfo" Text="删除" />
              </ItemTemplate>
              <FooterTemplate>

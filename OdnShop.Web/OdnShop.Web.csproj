@@ -91,6 +91,7 @@
     <Content Include="backend\images\uploader.swf" />
     <Content Include="backend\images\webuploader.min.js" />
     <Content Include="backend\orderlist.aspx" />
+    <Content Include="backend\productcategoryedit.aspx" />
     <Content Include="backend\useredit.aspx" />
     <Content Include="backend\userlist.aspx" />
     <Content Include="backend\vshopconfig.aspx" />
@@ -245,6 +246,13 @@
     </Compile>
     <Compile Include="backend\orderlist.aspx.designer.cs">
       <DependentUpon>orderlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\productcategoryedit.aspx.cs">
+      <DependentUpon>productcategoryedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backend\productcategoryedit.aspx.designer.cs">
+      <DependentUpon>productcategoryedit.aspx</DependentUpon>
     </Compile>
     <Compile Include="backend\productcategorylist.aspx.cs">
       <DependentUpon>productcategorylist.aspx</DependentUpon>

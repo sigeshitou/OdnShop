@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Collections.Generic;
 
 using OdnShop.Core.Business;
 using OdnShop.Core.Factory;
@@ -21,8 +23,45 @@ namespace OdnShop.Web.backend
         //加载
         private void LoadListData()
         {
-            this.dgProductCategoryList.DataSource = ProductCategoryFactory.GetAll();
+            List<ProductCategoryModel> list = new List<ProductCategoryModel>();
+            DataTable dt = ProductCategoryFactory.GetAll();
+
+            BuildCategorys(list, dt, "0");
+
+            this.dgProductCategoryList.DataSource = list; 
             this.dgProductCategoryList.DataBind();
+        }
+
+        private void BuildCategorys(List<ProductCategoryModel> list, DataTable dt, string parentid, int depth = 0)
+        {
+            foreach (DataRow dr in dt.Select("parentid=" + parentid))
+            {
+                var branch = string.Empty;
+                if (depth > 0)
+                {
+                    branch = builddepthchar(depth);
+                }
+
+                ProductCategoryModel m = new ProductCategoryModel();
+                m.categoryid = Int32.Parse(dr["categoryid"].ToString());
+                m.categoryname = branch + dr["categoryname"].ToString();
+                m.parentid = Int32.Parse(dr["parentid"].ToString());
+                m.orderid = Int32.Parse(dr["orderid"].ToString());
+
+                list.Add(m);
+                BuildCategorys(list, dt, dr["categoryid"].ToString(), depth + 1);
+            }
+        }
+
+        private string builddepthchar(int depth)
+        {
+            string treechar = string.Empty;
+            for (int i = 0; i < depth; i++)
+            {
+                treechar += "&nbsp;&nbsp;";
+            }
+
+            return treechar + "&nbsp;&nbsp;└ ";
         }
 
         protected void dgProductCategoryList_CancelCommand(object source, DataGridCommandEventArgs e)

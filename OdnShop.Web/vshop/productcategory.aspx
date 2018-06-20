@@ -32,7 +32,6 @@
   <div class="mainright">
 <div class="blsit-list">
 
-
 <li><!-- 全部分类下10个商品dl -->
     <%
         List<ProductModel> pageAllProducts = new List<ProductModel>();
@@ -42,7 +41,7 @@
         foreach (ProductModel pm in allP)
         {
         %>
-<dl><dt><a href="productshow.aspx?id=<%= pm.productid %>"><img src="<%= pm.includepicpath %>" alt="" /></a></dt><dd><h3><%= pm.productname %></h3><span>&yen;<%= pm.price %></span><del style="display:none">&yen;500</del><p class="add-to-cart" onClick="toshare(<%= pm.productid %>)"><span>添加到购物车</span></p></dd></dl>
+<dl><dt><a href="productshow.aspx?id=<%= pm.productid %>"><img src="<%= pm.includepicpath %>" alt="" /></a></dt><dd><h3><%= pm.productname %></h3><span>&yen;<%= pm.price %></span><p class="add-to-cart" onClick="toshare(<%= pm.productid %>)"><span>添加到购物车</span></p></dd></dl>
 <% } %>
 <div class="mores"><a href="productlist.aspx">查看本分类全部商品</a></div>
 </li>
@@ -53,12 +52,21 @@
         %>
 <li><!-- 分类下10个商品dl -->
 <%
+        //输出二级分类
+        List<ProductCategoryModel> catelist = ProductCategoryFactory.GetListAll(cat.categoryid) ;
+        int childcatecount = 0;
+        foreach (ProductCategoryModel subcate in catelist)
+        {
+            childcatecount++;
+            Response.Write(String.Format("<p><a class='clid' href='productlist.aspx?cid={0}'>{1}</a></p>", subcate.categoryid, subcate.categoryname));
+        }
+
         allP = ProductFactory.GetList(10, string.Format(" where productcode=1 and categoryid={0} ",cat.categoryid));
         AddProductToList(pageAllProducts, allP);
         foreach (ProductModel pm in allP)
         {
         %>
-<dl><dt><a href="productshow.aspx?id=<%= pm.productid %>"><img src="<%= pm.includepicpath %>" alt="" /></a></dt><dd><h3><%= pm.productname %></h3><span>&yen;<%= pm.price %></span><del style="display:none">&yen;500</del><p class="add-to-cart" onClick="toshare(<%= pm.productid %>)"><span>添加到购物车</span></p></dd></dl>
+<dl><dt><a href="productshow.aspx?id=<%= pm.productid %>"><img src="<%= pm.includepicpath %>" alt="" /></a></dt><dd><h3><%= pm.productname %></h3><span>&yen;<%= pm.price %></span><p class="add-to-cart" onClick="toshare(<%= pm.productid %>)"><span>添加到购物车</span></p></dd></dl>
 <% } %>
 <div class="mores"><a href="productlist.aspx?cid=<%= cat.categoryid %>">查看本分类全部商品</a></div>
 </li>
@@ -106,7 +114,7 @@
 <dt><img src="<%= pm.includepicpath %>" alt=""/></dt>
 <dd>
 <h4><%= pm.productname %></h4>
-<span id="showprice<%# Eval("productid")%>">&yen;<%= pm.price %></span><del style="display:none">&yen;500</del>
+<span id="showprice<%# Eval("productid")%>">&yen;<%= pm.price %></span>
 <p>库存：<%= pm.productcount %></p>
 <!--规格属性-->
     <div class="iteminfo_buying" style="<%= pm.itemprice == "" ? "display:none" : "" %>">
