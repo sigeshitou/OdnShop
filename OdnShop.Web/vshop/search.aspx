@@ -48,7 +48,9 @@
 </li>
 <% } %>
 </ul>
-<div class="mores"><a href="productlist.aspx">更多产品</a></div>
+<div class="showpage">
+<%= PagerHtml %>
+</div>
 </div>
 
 <!-- 弹出购物车s -->

@@ -100,9 +100,6 @@ namespace OdnShop.Core.Common
             for (int i = 0; i < b.Length; i++)
                 ret += b[i].ToString("x").PadLeft(2, '0');
             return ret;
-
-            //说明：此处被改为兼容动易ASP模式的MD5
-            //return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(str, "MD5").ToLower().Substring(8, 16);
         }
 
         /// <summary>
@@ -400,6 +397,25 @@ namespace OdnShop.Core.Common
             }
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// 安全检查搜索关键词，目前是过滤掉所有非中文字符
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string SafeCheckSearchKw(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return string.Empty;
+
+            string tmp = string.Empty;
+            char[] c = str.ToCharArray();
+            for (int i = 0; i < c.Length; i++)
+                if (c[i] >= 0x4e00 && c[i] <= 0x9fbb)
+                    tmp += c[i].ToString();
+
+            return tmp;
         }
 
         public static string BuildProductListPager(int totalcount, int pagesize, int pageindex, string url)

@@ -16,11 +16,11 @@ namespace OdnShop.Web.vshop
                 int totalcount = 0;
                 int pagesize = 10;
                 int pageindex = HYRequest.GetQueryInt("p", 1);
-                string kw = HYRequest.GetQueryString("kw");
+                string kw = Utils.SafeCheckSearchKw(HYRequest.GetQueryString("kw"));
                 this.SearchKw = kw;
                 string whereSql = string.Empty;
 
-                List<ProductModel> list;
+                //List<ProductModel> list;
                 if (!string.IsNullOrEmpty(kw))
                 {
                     whereSql = string.Format(" where productname like '%{0}%' ", kw);
@@ -30,6 +30,8 @@ namespace OdnShop.Web.vshop
                 {
                     searchProducts = ProductFactory.GetList(10, string.Empty);
                 }
+
+                PagerHtml = Utils.BuildProductListPager(totalcount, pagesize, pageindex, "search.aspx?p={0}&kw=" + kw);
             }
         }
 
@@ -41,5 +43,7 @@ namespace OdnShop.Web.vshop
             get { return _searchkw; }
             set { _searchkw = value; }
         }
+
+        public string PagerHtml = string.Empty;
     }
 }
