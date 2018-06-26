@@ -34,7 +34,7 @@
 </div>
 
 <div id="footer">
-Copyright &copy;<a href="http://www.odnshop.com" target="_blank">www.OdnShop.com</a>  All Rights Reserved<br />
+Copyright &copy;<a href="http://www.odnshop.com" target="_blank">OdnShop</a>  All Rights Reserved<br />
 </div>
 </body>
 </html>
