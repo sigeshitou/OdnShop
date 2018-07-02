@@ -79,7 +79,7 @@ namespace OdnShop.Web.vshop
             CartOrder.shippingdesc = "快递"; //this.shipping_1.Checked ? "市内" : "市外";
             CartOrder.paymentdesc = iswxpay ? "微信支付" : "货到付款";
             CartOrder.ordermessage = this.txtordermessage.Value;
-            CartOrder.ordersysdesc = userInfo.usertypedesc;
+            //CartOrder.ordersysdesc = userInfo.usertypedesc;
             CartOrder.orderpostage = CartOrder.postage.ToString() ;
 
             //如果用户信息不全，则补充完整

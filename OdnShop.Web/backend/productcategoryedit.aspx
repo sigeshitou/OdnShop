@@ -10,34 +10,6 @@
 body { padding:10px }
 -->
 </style>
-    <link rel="stylesheet" href="editor/themes/default/default.css" />
-	<link rel="stylesheet" href="editor/plugins/code/prettify.css" />
-	<script charset="utf-8" src="editor/kindeditor.js" type="text/javascript"></script>
-	<script charset="utf-8" src="editor/lang/zh_CN.js" type="text/javascript"></script>
-	<script charset="utf-8" src="editor/plugins/code/prettify.js" type="text/javascript"></script>
-<script type="text/javascript">
-			KindEditor.ready(function(K) {
-				var uploadbutton = K.uploadbutton({
-					button : K('#uploadButton')[0],
-					fieldName : 'imgFile',
-					url : 'editor/upload_json.ashx',
-					afterUpload : function(data) {
-						if (data.error === 0) {
-							var txtincludepic = K.formatUrl(data.url, 'absolute');
-							K('#txtincludepic').val(txtincludepic);
-						} else {
-							alert(data.message);
-						}
-					},
-					afterError : function(str) {
-						alert('自定义错误信息: ' + str);
-					}
-				});
-				uploadbutton.fileBox.change(function(e) {
-					uploadbutton.submit();
-				});
-			});
-</script>
 </head>
 <body>
 <form id="Form1" runat="server">

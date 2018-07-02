@@ -12,7 +12,7 @@ namespace OdnShop.Web.vshop
             {
                 UserModel userInfo = this.LoginUser;
                 nickname = userInfo.nickname;
-                usertypedesc = userInfo.usertypedesc;
+                //usertypedesc = userInfo.usertypedesc;
                 userId = userInfo.uid.ToString();
                 userJf = userInfo.jfnum.ToString();
 

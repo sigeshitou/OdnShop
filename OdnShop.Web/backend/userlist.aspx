@@ -71,11 +71,6 @@ body { padding:10px }
               <%# DataBinder.Eval(Container.DataItem, "jfnum")%>
            </ItemTemplate>
         </asp:TemplateColumn>
-        <asp:TemplateColumn HeaderText="类别" ItemStyle-Height="33" ItemStyle-HorizontalAlign="Center">
-           <ItemTemplate>
-              <%# getusertypedesc((int)DataBinder.Eval(Container.DataItem, "usertype"))%>
-           </ItemTemplate>
-        </asp:TemplateColumn>
         <asp:TemplateColumn HeaderText="操作" ItemStyle-HorizontalAlign="Center">
              <ItemTemplate>
                 <a href="useredit.aspx?uid=<%# DataBinder.Eval(Container.DataItem, "uid")%>&action=edit">修改</a>

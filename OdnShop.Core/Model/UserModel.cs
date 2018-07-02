@@ -23,32 +23,11 @@ namespace OdnShop.Core.Model
         public DateTime createdate { get; set; }
         public int fromuid { get; set; }
 
-        /// <summary>
-        /// 1是普通用户，10是VIP，100是代理商
-        /// </summary>
         private int _usertype = 1;
         public int usertype
         {
             get { return _usertype; }
             set { _usertype = value; }
-        }
-
-        public string usertypedesc
-        {
-            get
-            {
-                switch (usertype)
-                {
-                    case 1:
-                        return "普通用户";
-                    case 10:
-                        return "VIP用户";
-                    case 100:
-                        return "代理商";
-
-                    default: return "普通用户";
-                }
-            }
         }
     }
 }
