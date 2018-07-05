@@ -1,3 +1,5 @@
+###[最全阿里云优惠--阿里云代金券1000元免费分享啦](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=53vs5cno)
+
 # OdnShop
 
 #### 项目介绍
@@ -10,5 +12,5 @@
 ![输入图片说明](https://gitee.com/uploads/images/2018/0611/102010_39acbb3a_1261781.png "1.png")
 ![输入图片说明](https://gitee.com/uploads/images/2018/0611/102031_545515c3_1261781.png "2.png")
 
-### 如本项目对您有帮助请打开微信扫描如下赞赏码
-![谢谢！](https://gitee.com/uploads/images/2018/0620/195430_fb22ee95_1261781.jpeg "zsm.jpg")
+
+###[最全阿里云优惠--阿里云代金券1000元免费分享啦](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=53vs5cno)
