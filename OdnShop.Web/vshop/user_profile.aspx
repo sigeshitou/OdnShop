@@ -27,7 +27,7 @@
 <main class="usermainedit">
 <dl>
 <dt><img src="<%= userInfo.headpicurl %>" alt=""/></dt>
-<dd><h4><%= userInfo.nickname %></h4>您是 <span><%= userInfo.usertypedesc %></span> 您的ID号：<%= userInfo.uid %></dd>
+<dd><h4><%= userInfo.nickname %></h4> <span></span> 您的ID号：<%= userInfo.uid %></dd>
 <dd></dd>
 </dl>
 <ul>
