@@ -20,7 +20,8 @@ namespace OdnShop.Web.vshop
                 if (!rootUrl.EndsWith("/"))
                     rootUrl += "/";
 
-                string url = rootUrl + "vshop/share.aspx?u=" + u;
+                //string url = rootUrl + "vshop/share.aspx?u=" + u;
+                string url = rootUrl + "vshop/index.aspx";
 
                 var qrCodeEncoder = new QRCodeEncoder
                 {
