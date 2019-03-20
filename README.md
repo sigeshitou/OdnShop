@@ -1,4 +1,3 @@
-###[最全阿里云优惠--阿里云代金券1000元免费分享啦](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=53vs5cno)
 
 # OdnShop
 
@@ -13,4 +12,3 @@
 ![输入图片说明](https://gitee.com/uploads/images/2018/0611/102031_545515c3_1261781.png "2.png")
 
 
-###[最全阿里云优惠--阿里云代金券1000元免费分享啦](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=53vs5cno)

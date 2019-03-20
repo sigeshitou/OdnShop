@@ -23,6 +23,9 @@ namespace OdnShop.Web.backend
 
                 this.txtPostAge.Text = vs.PostAge.ToString();
                 this.txtFreePostAge.Text = vs.FreePostAge.ToString();
+
+                this.txtHomeCommendProductCount.Text = vs.HomeCommendProductCount.ToString();
+                this.txtHomeLatestProductCount.Text = vs.HomeLatestProductCount.ToString();
             }
         }
 
@@ -35,6 +38,9 @@ namespace OdnShop.Web.backend
             vs.ShopTel = this.txtShopTel.Text.Trim();
             vs.MoneyToJfRate = Int32.Parse(this.txtMoneyToJfRate.Text.Trim());
             vs.ShopLogo = this.txtShopLogo.Text.Trim();
+
+            vs.HomeCommendProductCount = Int32.Parse(this.txtHomeCommendProductCount.Text.Trim());
+            vs.HomeLatestProductCount = Int32.Parse(this.txtHomeLatestProductCount.Text.Trim());
 
             vs.PostAge = Decimal.Parse(this.txtPostAge.Text.Trim());
             vs.FreePostAge = Decimal.Parse(this.txtFreePostAge.Text.Trim());

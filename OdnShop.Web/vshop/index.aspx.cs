@@ -15,8 +15,8 @@ namespace OdnShop.Web.vshop
         {
             if (!Page.IsPostBack)
             {
-                commendProducts = ProductFactory.GetList(6, " where iscommend=1 and productcode=1 ");
-                latestProducts = ProductFactory.GetList(12, " where productcode=1 ");
+                commendProducts = ProductFactory.GetList(shopconfig.HomeCommendProductCount, " where iscommend=1 and productcode=1 ");
+                latestProducts = ProductFactory.GetList(shopconfig.HomeLatestProductCount, " where productcode=1 ");
 
                 foreach (ProductModel pm in commendProducts)
                 {

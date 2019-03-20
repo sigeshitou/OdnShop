@@ -50,6 +50,14 @@ body { padding:10px }
       <td width="12%" align="center" class="tdbg">免邮额：      </td>
       <td class="tdbg"><asp:TextBox runat="server" ID="txtFreePostAge" CssClass="input" />（免邮费得消费额，0表示无）</td>
     </tr>
+    <tr>
+      <td width="12%" align="center" class="tdbg">首页优品推荐数量：      </td>
+      <td class="tdbg"><asp:TextBox runat="server" ID="txtHomeCommendProductCount" CssClass="input" /></td>
+    </tr>
+    <tr>
+      <td width="12%" align="center" class="tdbg">首页最新上架数量：      </td>
+      <td class="tdbg"><asp:TextBox runat="server" ID="txtHomeLatestProductCount" CssClass="input" /></td>
+    </tr>
     <tr class="tdbg">
 	  <td>&nbsp;</td>
       <td><asp:Button runat="server" Text="保 存" ID="btnSave" CssClass="bnt" onclick="btnSave_Click" /></td>

@@ -68,9 +68,9 @@
 </main>
 <!-- 首页四个图标 e -->
 
-<!-- 精品推荐6个 s -->
+<!-- 优品推荐6个 s -->
 <main class="mains">
-<h2><span>精品推荐</span></h2>
+<h2><span>优品推荐</span></h2>
 </main>
 
 <div class="prolist">
@@ -87,11 +87,11 @@
 </ul>
 
 </div>
-<!-- 精品推荐6个 e -->
+<!-- 优品推荐6个 e -->
 
 <!-- 首页最新产品列表12个 s -->
 <main class="mains">
-<h2><span>猜您喜欢</span></h2>
+<h2><span>最新上架</span></h2>
 </main>
 
 <div class="prolist" id="gallery-wrapper">
