@@ -13,5 +13,9 @@ namespace OdnShop.Core.Model
 
         public decimal PostAge = 10; //统一邮递费,0表示免邮
         public decimal FreePostAge = 0; //免邮额(含)，既超过多少钱可以免邮费，0表示无
+
+        //首页定义
+        public int HomeCommendProductCount = 6;
+        public int HomeLatestProductCount = 8;
     }
 }

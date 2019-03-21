@@ -25,7 +25,7 @@
         脚本解析引擎：<%= SiteServerInfo.DotNetVersion %><br />
     </div>
     <div class="box">
-        程序名称：OdnShop V1.1<br />
+        程序名称：OdnShop V1.2<br />
         程序官网：<a href="https://gitee.com/keke11/OdnShop" target="_blank">https://gitee.com/keke11/OdnShop</a><br />
     </div>
 </body>
