@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.IO;
-using System.Collections.Generic;
 using System.Web.SessionState;
 using System.Web;
-using System.Text.RegularExpressions;
 
 using OdnShop.Core.Common;
 using OdnShop.Core.Business;
@@ -16,9 +12,10 @@ namespace OdnShop.Web.tools
     /// </summary>
     public class upload_ajax : IHttpHandler, IRequiresSessionState
     {
-
         public void ProcessRequest(HttpContext context)
         {
+            Security.CheckAdministerAndCloseReq();
+
             //取得处事类型
             string action = HYRequest.GetQueryString("action");
 
