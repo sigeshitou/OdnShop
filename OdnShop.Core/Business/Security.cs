@@ -74,6 +74,22 @@ namespace OdnShop.Core.Business
 
         }
 
+        public static void CheckAdministerAndCloseReq()
+        {
+            LoginMember info = Security.Check();
+            if (info == null)
+            {
+                HttpContext.Current.Response.End();
+                return;
+            }
+
+            if (!info.IsAdministrator)
+            {
+                HttpContext.Current.Response.End();
+                return;
+            }
+        }
+
         public static void Logout()
         {
             HttpCookie cookie = HttpContext.Current.Request.Cookies[SiteConfig.Instance().CookieName];
